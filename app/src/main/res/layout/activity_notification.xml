@@ -13,9 +13,10 @@
         android:text="Notification"
         android:textStyle="bold"
         android:textColor="#fff"
+        android:textAlignment="center"
         android:background="#4B0082"
-        android:padding="15dp"
-        android:textSize="20sp"/>
+        android:padding="10dp"
+        android:textSize="25sp"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,14 +40,14 @@
                     android:textSize="18sp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="20dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="italic"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="20% off on all Furnitures. Only for today, Grab Now!"
                     android:textColor="#000"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="20dp"/>
@@ -56,6 +57,7 @@
                     android:layout_height="1dp"
                     android:background="#3A3636"
                     android:layout_margin="10dp"/>
+
             </LinearLayout>
 
             <LinearLayout
@@ -71,14 +73,14 @@
                     android:textSize="18sp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="20dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="italic"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="20% off on all Furnitures. Only for today, Grab Now!"
                     android:textColor="#000"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="20dp"/>
@@ -88,9 +90,11 @@
                     android:layout_height="1dp"
                     android:background="#3A3636"
                     android:layout_margin="10dp"/>
+
             </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

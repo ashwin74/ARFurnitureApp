@@ -1,18 +1,3 @@
 <resources>
     <string name="app_name">AR Shop</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="sign_in">Sign In</string>
-    <string name="first_name">First Name</string>
-    <string name="last_name">Last Name</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="mobile">Mobile Number</string>
-    <string name="register">REGISTER</string>
-    <string name="about_us">About Us</string>
-    <string name="created">Developers</string>
-    <string name="ashwin"># Ashwin P</string>
-    <string name="kiran"># Kiran Raj</string>
-    <string name="jithin"># Jithin </string>
-    <string name="arun"># Arun C</string>
-    <string name="shop_intro">Shop Your Furniture</string>
 </resources>

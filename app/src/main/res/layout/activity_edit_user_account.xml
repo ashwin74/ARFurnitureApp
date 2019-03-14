@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UserAccount">
+    tools:context=".EditUserAccount">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Account"
+        android:text="Edit Account"
         android:textStyle="bold"
         android:textColor="#fff"
         android:textAlignment="center"
@@ -32,13 +32,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="First Name"
+                android:textColor="#000"
                 android:textSize="18sp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ashwin"
-                android:textColor="#000"
+                android:hint="Eg. Ashwin"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -46,13 +46,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Last Name"
+                android:textColor="#000"
                 android:textSize="18sp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="P"
-                android:textColor="#000"
+                android:hint="Eg. P"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -60,13 +60,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Email"
+                android:textColor="#000"
                 android:textSize="18sp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ash123@gmail.com"
-                android:textColor="#000"
+                android:hint="Eg. ash123@gmail.com"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -74,13 +74,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Phone No"
+                android:textColor="#000"
                 android:textSize="18sp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="4434453453445"
-                android:textColor="#000"
+                android:hint="Eg. 4434453453445"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -88,13 +88,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="House Name"
+                android:textColor="#000"
                 android:textSize="18sp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="White House"
-                android:textColor="#000"
+                android:hint="Eg. White House"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -102,13 +102,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="City"
+                android:textColor="#000"
                 android:textSize="18sp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kannur"
-                android:textColor="#000"
+                android:hint="Eg. Kannur"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -116,13 +116,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="State"
+                android:textColor="#000"
                 android:textSize="18sp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kerala"
-                android:textColor="#000"
+                android:hint="Eg. Kerala"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -130,20 +130,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Zip Code"
+                android:textColor="#000"
                 android:textSize="18sp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="322332"
-                android:textColor="#000"
+                android:hint="Eg. 322332"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Edit Details"
+                android:text="Save Changes"
                 android:textColor="#fff"
                 android:textSize="18sp"
                 android:background="@color/colorAccent"/>

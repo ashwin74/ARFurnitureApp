@@ -10,21 +10,32 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:background="#4B0082"
+            android:padding="10dp"
+            android:textSize="25sp"/>
+
+        <TextView
             android:id="@+id/signin_text_view_id"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="@string/sign_in"
-            android:textSize="35sp"
+            android:text="Enter your Registered Email and Passsword"
+            android:textSize="20sp"
+            android:textStyle="italic"
             android:gravity="center"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"
-            android:textColor="#4B0082"/>
+            android:layout_margin="35dp"
+            android:textColor="#000"/>
 
         <EditText
             android:id="@+id/email_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
+            android:hint="Email"
             android:layout_margin="20dp"
             android:inputType="textEmailAddress"/>
 
@@ -32,7 +43,7 @@
             android:id="@+id/password_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
+            android:hint="Password"
             android:layout_margin="20dp"
             android:inputType="textPassword" />
 
@@ -43,9 +54,10 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="30dp"
-            android:text="@string/sign_in"
+            android:text="Sign In"
             android:background="#4B0082"
             android:textColor="#FFF"/>
 
     </LinearLayout>
+
 </ScrollView>

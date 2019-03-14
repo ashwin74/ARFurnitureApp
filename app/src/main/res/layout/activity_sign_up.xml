@@ -9,15 +9,27 @@
     android:orientation="vertical">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:background="#4B0082"
+            android:padding="10dp"
+            android:textSize="25sp"/>
+
+        <TextView
             android:id="@+id/signup_text_view_id"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="@string/sign_up"
-            android:textSize="35sp"
+            android:text="Enter Your Details"
+            android:textStyle="italic"
+            android:textSize="20sp"
             android:gravity="center"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp"
-            android:textColor="#4B0082"/>
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="#000"/>
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -30,7 +42,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:hint="@string/first_name"
+                android:hint="First Name"
                 android:inputType="text"/>
 
             <EditText
@@ -38,7 +50,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:hint="@string/last_name"
+                android:hint="Last Name"
                 android:inputType="text"/>
 
         </LinearLayout>
@@ -47,7 +59,7 @@
             android:id="@+id/email_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
+            android:hint="Email"
             android:layout_margin="20dp"
             android:inputType="textEmailAddress"/>
 
@@ -55,7 +67,7 @@
             android:id="@+id/password_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
+            android:hint="Password"
             android:layout_margin="20dp"
             android:inputType="textPassword"/>
 
@@ -63,7 +75,7 @@
             android:id="@+id/phone_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mobile"
+            android:hint="Phone No."
             android:layout_margin="20dp"
             android:inputType="phone"/>
 
@@ -72,9 +84,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="@string/register"
+            android:text="Register"
             android:background="#4B0082"
             android:textColor="#FFF"/>
 
     </LinearLayout>
+
 </ScrollView>

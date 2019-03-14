@@ -27,12 +27,12 @@
         android:id="@+id/product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PRODUCT" />
+        android:text="PRODUCT DETAIL" />
     <Button
         android:id="@+id/products"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PRODUCTS" />
+        android:text="PRODUCT DISPLAY" />
     <Button
         android:id="@+id/signin"
         android:layout_width="match_parent"
@@ -48,5 +48,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="USER" />
+    <Button
+        android:id="@+id/useredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="USER EDIT" />
+    <Button
+        android:id="@+id/cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CART" />
+    <Button
+        android:id="@+id/order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="order" />
+    <Button
+        android:id="@+id/rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rate and review" />
 
 </LinearLayout>

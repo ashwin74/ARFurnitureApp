@@ -93,5 +93,45 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button useredit = (Button)findViewById(R.id.useredit);
+
+        useredit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, EditUserAccount.class);
+                startActivity(intent);
+            }
+        });
+
+        Button cart = (Button)findViewById(R.id.cart);
+
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Cart.class);
+                startActivity(intent);
+            }
+        });
+
+        Button order = (Button)findViewById(R.id.order);
+
+        order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Order.class);
+                startActivity(intent);
+            }
+        });
+
+        Button rate = (Button)findViewById(R.id.rate);
+
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddReviewRating.class);
+                startActivity(intent);
+            }
+        });
     }
 }
