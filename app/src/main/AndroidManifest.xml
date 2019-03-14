@@ -9,24 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddReviewRating"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
-        <activity android:name=".Order"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".Cart"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".EditUserAccount"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".UserAccount"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".Favourite"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".ProductDetail"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".ProductDisplay"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".MainActivity"
+        <activity android:name=".OrderStatus"></activity>
+        <activity
+            android:name=".AddReviewRating"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".Order"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Cart"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".EditUserAccount"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".UserAccount"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Favourite"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ProductDetail"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ProductDisplay"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MainActivity"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,12 +43,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUp"
-            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".SignUp"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".Notification" />
         <activity android:name=".AboutUs" />
-        <activity android:name=".SignIn"
-            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".SignIn"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>
