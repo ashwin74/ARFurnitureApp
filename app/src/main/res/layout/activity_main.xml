@@ -78,6 +78,12 @@
             android:layout_height="wrap_content"
             android:text="order status" />
 
+        <Button
+            android:id="@+id/setip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Setip" />
+
     </LinearLayout>
 
 </ScrollView>
