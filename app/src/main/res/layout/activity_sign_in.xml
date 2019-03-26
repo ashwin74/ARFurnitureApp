@@ -21,7 +21,6 @@
             android:textSize="25sp"/>
 
         <TextView
-            android:id="@+id/signin_text_view_id"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="Enter your Registered Email and Passsword"
@@ -32,7 +31,7 @@
             android:textColor="#000"/>
 
         <EditText
-            android:id="@+id/email_id"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
@@ -40,7 +39,7 @@
             android:inputType="textEmailAddress"/>
 
         <EditText
-            android:id="@+id/password_id"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -48,7 +47,7 @@
             android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/register_id"
+            android:id="@+id/sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"

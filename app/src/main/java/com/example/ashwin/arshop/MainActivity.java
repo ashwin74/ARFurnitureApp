@@ -143,15 +143,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        Button setip = (Button)findViewById(R.id.setip);
-
-        setip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, setip.class);
-                startActivity(intent);
-            }
-        });
     }
 }

@@ -36,6 +36,7 @@
                 android:textSize="18sp"/>
 
             <EditText
+                android:id="@+id/first_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Eg. Ashwin"
@@ -50,23 +51,10 @@
                 android:textSize="18sp"/>
 
             <EditText
+                android:id="@+id/last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Eg. P"
-                android:textSize="20sp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email"
-                android:textColor="#000"
-                android:textSize="18sp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Eg. ash123@gmail.com"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -78,6 +66,7 @@
                 android:textSize="18sp"/>
 
             <EditText
+                android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Eg. 4434453453445"
@@ -92,6 +81,7 @@
                 android:textSize="18sp"/>
 
             <EditText
+                android:id="@+id/house_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Eg. White House"
@@ -106,6 +96,7 @@
                 android:textSize="18sp"/>
 
             <EditText
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Eg. Kannur"
@@ -120,6 +111,7 @@
                 android:textSize="18sp"/>
 
             <EditText
+                android:id="@+id/state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Eg. Kerala"
@@ -134,6 +126,7 @@
                 android:textSize="18sp"/>
 
             <EditText
+                android:id="@+id/zip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Eg. 322332"
@@ -141,6 +134,7 @@
                 android:layout_marginBottom="10dp"/>
 
             <Button
+                android:id="@+id/save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Save Changes"

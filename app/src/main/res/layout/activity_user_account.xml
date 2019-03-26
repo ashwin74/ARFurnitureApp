@@ -35,6 +35,7 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/first_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ashwin"
@@ -49,6 +50,7 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="P"
@@ -63,6 +65,7 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ash123@gmail.com"
@@ -77,6 +80,7 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="4434453453445"
@@ -91,6 +95,7 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/house_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="White House"
@@ -105,6 +110,7 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kannur"
@@ -119,6 +125,7 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kerala"
@@ -133,6 +140,7 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/zip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="322332"
@@ -141,6 +149,7 @@
                 android:layout_marginBottom="10dp"/>
 
             <Button
+                android:id="@+id/edit_user_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Edit Details"

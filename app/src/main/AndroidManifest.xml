@@ -51,7 +51,6 @@
         <activity
             android:name=".SignIn"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".setip"></activity>
     </application>
 
 </manifest>

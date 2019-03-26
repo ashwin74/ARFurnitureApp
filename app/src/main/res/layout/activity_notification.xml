@@ -33,6 +33,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="12-07-2019"
@@ -43,39 +44,7 @@
                     android:textStyle="italic"/>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="20% off on all Furnitures. Only for today, Grab Now!"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginLeft="20dp"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#3A3636"
-                    android:layout_margin="10dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="12-07-2019"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="20dp"
-                    android:textStyle="italic"/>
-
-                <TextView
+                    android:id="@+id/notification"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="20% off on all Furnitures. Only for today, Grab Now!"

@@ -14,6 +14,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/search"
             android:layout_width="wrap_content"
             android:layout_weight="9"
             android:layout_height="wrap_content"
@@ -22,6 +23,7 @@
             android:layout_marginLeft="20dp"/>
 
         <Button
+            android:id="@+id/search_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
@@ -88,6 +90,7 @@
                 android:layout_marginTop="5dp">
 
                 <ImageView
+                    android:id="@+id/item_image"
                     android:layout_width="match_parent"
                     android:layout_height="175dp"
                     android:src="@drawable/scindhiasofa"
@@ -103,6 +106,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/item_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Scindhia Sofa"
@@ -113,6 +117,7 @@
                         android:textSize="18sp"/>
 
                     <TextView
+                        android:id="@+id/item_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
@@ -125,138 +130,7 @@
                 </LinearLayout>
 
                 <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ADD TO CART"
-                    android:textColor="#fff"
-                    android:background="@color/colorAccent"
-                    android:padding="5dp"
-                    android:textSize="15sp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#3A3636"
-                    android:layout_margin="5dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="175dp"
-                    android:src="@drawable/scindhiasofa"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:scaleType="centerCrop"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Scindhia Sofa"
-                        android:layout_marginLeft="20dp"
-                        android:textStyle="italic"
-                        android:textColor="#000"
-                        android:layout_weight="5"
-                        android:textSize="18sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:textStyle="italic"
-                        android:text="Price - 7400 Rs"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#000"
-                        android:textSize="18sp"/>
-
-                </LinearLayout>
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ADD TO CART"
-                    android:textColor="#fff"
-                    android:background="@color/colorAccent"
-                    android:padding="5dp"
-                    android:textSize="15sp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#3A3636"
-                    android:layout_margin="5dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="175dp"
-                    android:src="@drawable/scindhiasofa"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:scaleType="centerCrop"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Scindhia Sofa"
-                        android:layout_marginLeft="20dp"
-                        android:textStyle="italic"
-                        android:textColor="#000"
-                        android:layout_weight="5"
-                        android:textSize="18sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:textStyle="italic"
-                        android:text="Price - 7400 Rs"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#000"
-                        android:textSize="18sp"/>
-
-                </LinearLayout>
-
-                <Button
+                    android:id="@+id/add_cart"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="ADD TO CART"
