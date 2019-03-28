@@ -57,6 +57,17 @@
             android:background="#4B0082"
             android:textColor="#FFF"/>
 
+        <Button
+            android:id="@+id/sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:text="sign up"
+            android:background="#4B0082"
+            android:textColor="#FFF"/>
+
     </LinearLayout>
 
 </ScrollView>
