@@ -12,11 +12,15 @@
         android:id="@+id/set_ip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="IP Address"/>
+        android:hint="Enter IP Address"
+        android:layout_margin="20dp"/>
 
     <Button
         android:id="@+id/set_ip_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SET IP"/>
+        android:text="SET IP"
+        android:layout_margin="20dp"
+        android:background="@color/colorAccent"
+        android:textColor="#fff"/>
 </LinearLayout>

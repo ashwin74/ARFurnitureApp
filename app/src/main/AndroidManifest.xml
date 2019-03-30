@@ -25,26 +25,8 @@
             android:name=".EditUserAccount"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".UserAccount"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".Favourite"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
             android:name=".ProductDetail"
             android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".ProductDisplay"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".MainActivity"
-            android:windowSoftInputMode="stateHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".SignUp"
             android:windowSoftInputMode="stateHidden" />
@@ -53,7 +35,9 @@
         <activity
             android:name=".SignIn"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".SetIp">
+        <activity
+            android:name=".SetIp"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Account"
+        android:text="User Profile"
         android:textStyle="bold"
         android:textColor="#fff"
         android:textAlignment="center"
@@ -134,11 +134,21 @@
                 android:layout_marginBottom="10dp"/>
 
             <Button
+                android:id="@+id/edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:background="@color/colorAccent"/>
+
+            <Button
                 android:id="@+id/save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Save Changes"
                 android:textColor="#fff"
+                android:layout_marginTop="10dp"
                 android:textSize="18sp"
                 android:background="@color/colorAccent"/>
 

@@ -18,8 +18,8 @@ import java.util.ArrayList;
 
 public class EditUserAccount extends AppCompatActivity implements View.OnClickListener {
     EditText e1,e2,e3,e4,e5,e6,e7;
-    Button b1;
-    String url="";
+    Button b1, b2;
+    String url="",lid,url1="";
     SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +33,45 @@ public class EditUserAccount extends AppCompatActivity implements View.OnClickLi
         e5=(EditText)findViewById(R.id.city);
         e6=(EditText)findViewById(R.id.state);
         e7=(EditText)findViewById(R.id.zip);
+        b1=(Button)findViewById(R.id.edit);
+        b2=(Button)findViewById(R.id.save);
 
         sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         url=sp.getString("url","")+"EditUserAccount";
+        url1=sp.getString("url","")+"View_user";
+        lid=sp.getString("lid","");
+        e1.setEnabled(false);
+        e2.setEnabled(false);
+        e3.setEnabled(false);
+        e4.setEnabled(false);
+        e5.setEnabled(false);
+        e6.setEnabled(false);
+        e7.setEnabled(false);
+        try {
+            JSONObject js=new JSONObject();
+            JSONParser jsonParser=new JSONParser();
+            ArrayList<NameValuePair> param=new ArrayList<>();
+            param.add(new BasicNameValuePair("lid",lid));
+            js=jsonParser.makeHttpRequest(url1,"GET",param);
+            String res=js.getString("Status");
+            if(res.equalsIgnoreCase("1"))
+            {
+                e1.setText(js.getString("first_name"));
+                e2.setText(js.getString("last_name"));
+                e3.setText(js.getString("phone"));
+                e4.setText(js.getString("house_name"));
+                e5.setText(js.getString("city"));
+                e6.setText(js.getString("state"));
+                e7.setText(js.getString("zip"));
+            }
+            else
+            {
+                Toast.makeText(this, "No Data", Toast.LENGTH_SHORT).show();
+            }
+        }catch (Exception e)
+        {
+            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+        }
         b1.setOnClickListener(this);
     }
 
@@ -67,7 +103,7 @@ public class EditUserAccount extends AppCompatActivity implements View.OnClickLi
                 if(status.equalsIgnoreCase("1"))
                 {
                     Toast.makeText(this, "Updated Successfully", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), UserAccount.class);
+                    Intent intent = new Intent(getApplicationContext(), EditUserAccount.class);
                     startActivity(intent);
                 }
                 else
@@ -77,6 +113,18 @@ public class EditUserAccount extends AppCompatActivity implements View.OnClickLi
             }catch(Exception e) {
                 Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
             }
+        }
+
+
+        if(v==b2)
+        {
+            e1.setEnabled(true);
+            e2.setEnabled(true);
+            e3.setEnabled(true);
+            e4.setEnabled(true);
+            e5.setEnabled(true);
+            e6.setEnabled(true);
+            e7.setEnabled(true);
         }
     }
 }

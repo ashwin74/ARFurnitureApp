@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,25 +50,34 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
             para.add(new BasicNameValuePair("password",pwd));
             json=jsonParser.makeHttpRequest(url,"GET",para);
 
-            try {
-                String status = json.getString("status");
-                if(status.equalsIgnoreCase("1"))
-                {
-                    Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
-                    String lid=json.getString("lid");
-                    SharedPreferences.Editor ed=sp.edit();
-                    ed.putString("lid",lid);
-                    ed.commit();
-                    Intent intent = new Intent(getApplicationContext(), ProductDisplay.class);
-                    startActivity(intent);
+            if (TextUtils.isEmpty(e1.getText())){
+                e1.setError("Email is required");
+            }
+            else if (TextUtils.isEmpty(e2.getText())){
+                e2.setError("You Forget your Password");
+            }
+            else {
+                try {
+                    String status = json.getString("status");
+                    if(status.equalsIgnoreCase("1"))
+                    {
+                        Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
+                        String lid=json.getString("lid");
+                        SharedPreferences.Editor ed=sp.edit();
+                        ed.putString("lid",lid);
+                        ed.commit();
+
+                        Intent intent = new Intent(getApplicationContext(), Home.class);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Toast.makeText(this, "Invalid", Toast.LENGTH_SHORT).show();
+                    }
+                }catch(Exception e) {
+                    Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
                 }
-                else
-                {
-                    Toast.makeText(this, "Invalid", Toast.LENGTH_SHORT).show();
-                }
-            }catch(Exception e) {
-                Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-                }
+            }
         }
 
         if (v==b2)
