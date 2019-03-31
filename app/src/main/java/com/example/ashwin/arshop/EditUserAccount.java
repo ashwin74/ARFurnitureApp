@@ -56,10 +56,10 @@ public class EditUserAccount extends AppCompatActivity implements View.OnClickLi
             String res=js.getString("Status");
             if(res.equalsIgnoreCase("1"))
             {
-                e1.setText(js.getString("first_name"));
-                e2.setText(js.getString("last_name"));
+                e1.setText(js.getString("fname"));
+                e2.setText(js.getString("lname"));
                 e3.setText(js.getString("phone"));
-                e4.setText(js.getString("house_name"));
+                e4.setText(js.getString("house"));
                 e5.setText(js.getString("city"));
                 e6.setText(js.getString("state"));
                 e7.setText(js.getString("zip"));
@@ -73,11 +73,12 @@ public class EditUserAccount extends AppCompatActivity implements View.OnClickLi
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
         b1.setOnClickListener(this);
+        b2.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v==b1)
+        if(v==b2)
         {
             String fname=e1.getText().toString();
             String lname=e2.getText().toString();
@@ -89,12 +90,13 @@ public class EditUserAccount extends AppCompatActivity implements View.OnClickLi
             JSONObject json=new JSONObject();
             JSONParser jsonParser=new JSONParser();
             ArrayList<NameValuePair> para=new ArrayList<>();
+            para.add(new BasicNameValuePair("lid",lid));
             para.add(new BasicNameValuePair("fname",fname));
             para.add(new BasicNameValuePair("lname",lname));
             para.add(new BasicNameValuePair("phone",phone));
             para.add(new BasicNameValuePair("house",house));
             para.add(new BasicNameValuePair("city",city));
-            para.add(new BasicNameValuePair("house",state));
+            para.add(new BasicNameValuePair("state",state));
             para.add(new BasicNameValuePair("zip",zip));
             json=jsonParser.makeHttpRequest(url,"GET",para);
 
@@ -116,7 +118,7 @@ public class EditUserAccount extends AppCompatActivity implements View.OnClickLi
         }
 
 
-        if(v==b2)
+        if(v==b1)
         {
             e1.setEnabled(true);
             e2.setEnabled(true);

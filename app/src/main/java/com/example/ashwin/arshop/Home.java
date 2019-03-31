@@ -100,5 +100,10 @@ public class Home extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
             return true;
         }
+
+    public void Product(){
+
+    }
+
     }
 
