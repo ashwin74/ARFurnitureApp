@@ -17,9 +17,6 @@
             android:id="@+id/user_details"
             android:title="User Profile" />
         <item
-            android:id="@+id/about"
-            android:title="About Us" />
-        <item
             android:id="@+id/sign_out"
             android:title="Sign Out" />
 

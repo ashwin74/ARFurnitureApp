@@ -1,7 +1,9 @@
 package com.example.ashwin.arshop;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -14,16 +16,30 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    ArrayList<String> itemid, itemname, itemprice, itemdescription, itemurl;
+    ListView item;
+    String url;
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        item=(ListView)findViewById(R.id.item);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +58,7 @@ public class Home extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        productDisplay();
     }
 
     @Override
@@ -80,9 +97,6 @@ public class Home extends AppCompatActivity
             Intent intent = new Intent(Home.this, OrderStatus.class);
             startActivity(intent);
 
-        }   else if (id == R.id.about) {
-            Intent intent = new Intent(Home.this, AboutUs.class);
-            startActivity(intent);
         }   else if (id == R.id.cart) {
             Intent intent = new Intent(Home.this, Cart.class);
             startActivity(intent);
@@ -101,8 +115,40 @@ public class Home extends AppCompatActivity
             return true;
         }
 
-    public void Product(){
+    public void productDisplay(){
+        JSONObject json=new JSONObject();
+        JSONParser jsonParser = new JSONParser();
+        ArrayList<NameValuePair> para=new ArrayList<>();
+        sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        url = sp.getString("url", "") + "Products";
+        json=jsonParser.makeHttpRequest(url,"GET",para);
+        try {
+            String status=json.getString("status");
+            Toast.makeText(this, json.toString(), Toast.LENGTH_SHORT).show();
+            if(status.equalsIgnoreCase("1")){
+                JSONArray ja=json.getJSONArray("data");
+                itemid=new ArrayList<>();
+                itemname=new ArrayList<>();
+                itemdescription=new ArrayList<>();
+                itemprice=new ArrayList<>();
+                itemurl=new ArrayList<>();
 
+                for(int i=0;i<ja.length();i++){
+                    JSONObject jo=ja.getJSONObject(i);
+                    itemid.add(jo.getString("itemid"));
+                    itemname.add(jo.getString("itemname"));
+                    itemdescription.add(jo.getString("itemdescription"));
+                    itemprice.add(jo.getString("itemprice"));
+                    itemurl.add(jo.getString("itemurl"));
+
+                }
+                    item.setAdapter(new Custom_driver(getApplicationContext(),itemname,itemprice,itemurl,itemid));
+            } else {
+                Toast.makeText(this, "No products...!!", Toast.LENGTH_SHORT).show();
+            }
+        }catch (Exception e){
+            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     }

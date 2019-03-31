@@ -11,12 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="User Profile"
-        android:textStyle="bold"
         android:textColor="#fff"
         android:textAlignment="center"
         android:background="#4B0082"
         android:padding="10dp"
-        android:textSize="25sp"/>
+        android:textSize="20sp"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,7 +38,7 @@
                 android:id="@+id/first_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Eg. Ashwin"
+                android:hint="First Name"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -54,7 +53,7 @@
                 android:id="@+id/last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Eg. P"
+                android:hint="Last Name"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -69,7 +68,7 @@
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Eg. 4434453453445"
+                android:hint="9734527864"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -84,7 +83,7 @@
                 android:id="@+id/house_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Eg. White House"
+                android:hint="House Name"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -99,7 +98,7 @@
                 android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Eg. Kannur"
+                android:hint="City Name"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -114,7 +113,7 @@
                 android:id="@+id/state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Eg. Kerala"
+                android:hint="State Name"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -129,7 +128,7 @@
                 android:id="@+id/zip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Eg. 322332"
+                android:hint="6 Digit Zip Code"
                 android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
