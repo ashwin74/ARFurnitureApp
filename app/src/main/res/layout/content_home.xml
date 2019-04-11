@@ -9,5 +9,4 @@
     tools:context=".Home"
     tools:showIn="@layout/app_bar_home">
 
-
 </ListView>

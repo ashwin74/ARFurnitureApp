@@ -29,10 +29,11 @@ import java.util.ArrayList;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ArrayList<String> itemid, itemname, itemprice, itemdescription, itemurl;
+    public static ArrayList<String> itemid, itemname, itemprice, itemdescription, itemurl, categoryid, categoryname, reviewid,userid, postdate, review, rating, firstname;
     ListView item;
     String url;
     SharedPreferences sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,6 +134,18 @@ public class Home extends AppCompatActivity
                 itemprice=new ArrayList<>();
                 itemurl=new ArrayList<>();
 
+                categoryid=new ArrayList<>();
+                categoryname=new ArrayList<>();
+
+                reviewid=new ArrayList<>();
+                userid=new ArrayList<>();
+//                loginid=new ArrayList<>();
+                postdate=new ArrayList<>();
+                review=new ArrayList<>();
+                rating=new ArrayList<>();
+
+                firstname=new ArrayList<>();
+
                 for(int i=0;i<ja.length();i++){
                     JSONObject jo=ja.getJSONObject(i);
                     itemid.add(jo.getString("itemid"));
@@ -141,6 +154,17 @@ public class Home extends AppCompatActivity
                     itemprice.add(jo.getString("itemprice"));
                     itemurl.add(jo.getString("itemurl"));
 
+                    categoryid.add(jo.getString("categoryid"));
+                    categoryname.add(jo.getString("categoryname"));
+
+                    reviewid.add(jo.getString("reviewid"));
+                    userid.add(jo.getString("userid"));
+
+                    review.add(jo.getString("review"));
+                    rating.add(jo.getString("rating"));
+                    postdate.add(jo.getString("postdate"));
+
+                    firstname.add(jo.getString("firstname"));
                 }
                     item.setAdapter(new Custom_driver(getApplicationContext(),itemname,itemprice,itemurl,itemid));
             } else {
@@ -150,6 +174,5 @@ public class Home extends AppCompatActivity
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
-
-    }
+}
 

@@ -25,6 +25,7 @@ public class Custom_driver extends BaseAdapter{
     ArrayList<String> b;
     ArrayList<String> c;
     ArrayList<String> d;
+    static int pos;
 
 
 
@@ -97,20 +98,22 @@ public class Custom_driver extends BaseAdapter{
         try
         {
             String imgurl="http://"+sh.getString("ip","")+":8084/ARFurnitureWeb/Items/"+c.get(position);
-            Picasso.with(Context).load(imgurl).transform(new CircleTransform()).into(item_image);}
+            Picasso.with(Context).load(imgurl).into(item_image);
+        }
         catch (Exception e)
         {
             Toast.makeText(Context, e.toString(), Toast.LENGTH_SHORT).show();
 
         }
 
-        add_cart.setTag(d.get(position));
+        add_cart.setTag(position);
 
 
         add_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String pid=add_cart.getTag().toString();
+
                 Toast.makeText(Context, pid, Toast.LENGTH_SHORT).show();
                 Intent in=new Intent(Context,ProductDetail.class);
                 in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

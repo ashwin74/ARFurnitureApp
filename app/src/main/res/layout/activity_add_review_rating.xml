@@ -7,15 +7,36 @@
     android:orientation="vertical"
     tools:context=".AddReviewRating">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rate and Review"
-        android:textColor="#fff"
-        android:textAlignment="center"
+        android:orientation="horizontal"
         android:background="#4B0082"
-        android:padding="10dp"
-        android:textSize="20sp"/>
+        android:padding="10dp">
+
+        <Button
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:text="&#x2190;"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:background="#4B0082"
+            android:layout_weight="1"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate and Review"
+            android:textColor="#fff"
+            android:layout_weight="9"
+            android:textAlignment="center"
+            android:background="#4B0082"
+            android:padding="10dp"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,6 +53,8 @@
                 android:text="Rate this Product"
                 android:textSize="20sp"
                 android:textColor="#000"
+                android:drawableLeft="@drawable/ic_menu_send"
+                android:drawablePadding="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="40dp"/>
 
@@ -76,6 +99,8 @@
                 android:textSize="20sp"
                 android:textColor="#000"
                 android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/ic_menu_send"
+                android:drawablePadding="10dp"
                 android:layout_marginLeft="40dp"/>
 
             <EditText

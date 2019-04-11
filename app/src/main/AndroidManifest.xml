@@ -14,7 +14,8 @@
         <activity android:name=".OrderStatus" />
         <activity
             android:name=".AddReviewRating"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
         <activity
             android:name=".Order"
             android:windowSoftInputMode="stateHidden" />
