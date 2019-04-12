@@ -22,7 +22,7 @@
             android:id="@+id/signup_text_view_id"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Enter Your Details"
+            android:text="Register a New Account"
             android:textStyle="italic"
             android:textSize="20sp"
             android:gravity="center"

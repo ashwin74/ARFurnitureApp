@@ -80,7 +80,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     }
                     else
                     {
-                        Toast.makeText(this, "Not Registered", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Registration Unsuccessfull", Toast.LENGTH_SHORT).show();
                     }
                 }catch(Exception e) {
                     Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();

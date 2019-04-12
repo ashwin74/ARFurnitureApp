@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static ArrayList<String> itemid, itemname, itemprice, itemdescription, itemurl, categoryid, categoryname, reviewid,userid, postdate, review, rating, firstname;
+    public static ArrayList<String> itemid, itemname, itemprice, itemdescription, itemurl, categoryid, categoryname;
     ListView item;
     String url;
     SharedPreferences sp;
@@ -41,15 +41,6 @@ public class Home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         item=(ListView)findViewById(R.id.item);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -125,7 +116,6 @@ public class Home extends AppCompatActivity
         json=jsonParser.makeHttpRequest(url,"GET",para);
         try {
             String status=json.getString("status");
-            Toast.makeText(this, json.toString(), Toast.LENGTH_SHORT).show();
             if(status.equalsIgnoreCase("1")){
                 JSONArray ja=json.getJSONArray("data");
                 itemid=new ArrayList<>();
@@ -136,15 +126,6 @@ public class Home extends AppCompatActivity
 
                 categoryid=new ArrayList<>();
                 categoryname=new ArrayList<>();
-
-                reviewid=new ArrayList<>();
-                userid=new ArrayList<>();
-//                loginid=new ArrayList<>();
-                postdate=new ArrayList<>();
-                review=new ArrayList<>();
-                rating=new ArrayList<>();
-
-                firstname=new ArrayList<>();
 
                 for(int i=0;i<ja.length();i++){
                     JSONObject jo=ja.getJSONObject(i);
@@ -157,18 +138,11 @@ public class Home extends AppCompatActivity
                     categoryid.add(jo.getString("categoryid"));
                     categoryname.add(jo.getString("categoryname"));
 
-                    reviewid.add(jo.getString("reviewid"));
-                    userid.add(jo.getString("userid"));
 
-                    review.add(jo.getString("review"));
-                    rating.add(jo.getString("rating"));
-                    postdate.add(jo.getString("postdate"));
-
-                    firstname.add(jo.getString("firstname"));
                 }
                     item.setAdapter(new Custom_driver(getApplicationContext(),itemname,itemprice,itemurl,itemid));
             } else {
-                Toast.makeText(this, "No products...!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "No Products Found", Toast.LENGTH_SHORT).show();
             }
         }catch (Exception e){
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();

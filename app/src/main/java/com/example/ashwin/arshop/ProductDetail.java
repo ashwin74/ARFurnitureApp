@@ -1,10 +1,13 @@
 package com.example.ashwin.arshop;
 
-import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,22 +20,30 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.AbstractQueue;
 import java.util.ArrayList;
 
-public class ProductDetail extends AppCompatActivity {
+public class ProductDetail extends AppCompatActivity implements View.OnClickListener {
 
-  TextView itemid, itemname, itemprice, itemdescription, categoryid, categoryname, reviewid, userid, postdate, review, rating, firstname;
+  TextView itemname, itemprice, itemdescription, categoryname;
   ImageView itemurl;
-  private android.content.Context Context;
+  ListView l1;
+  Button b1;
   SharedPreferences sh;
+  int pos;
+  String id;
+  SharedPreferences sp;
+  String url;
+  ArrayList<String> firstname,postdate,review,rating;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_product_detail);
-    int pos = Integer.parseInt(getIntent().getStringExtra("pid"));
+    pos = Integer.parseInt(getIntent().getStringExtra("pid"));
     sh=PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+    b1=(Button)findViewById(R.id.add_review_button);
+    l1=(ListView)findViewById(R.id.review_rate);
+    b1.setOnClickListener(this);
 
     //GET ID
     itemname = (TextView)findViewById(R.id.item_name);
@@ -41,10 +52,6 @@ public class ProductDetail extends AppCompatActivity {
     categoryname = (TextView)findViewById(R.id.item_category);
     itemurl=(ImageView)findViewById(R.id.item_image);
 
-    postdate = (TextView)findViewById(R.id.post_date);
-    review = (TextView)findViewById(R.id.review);
-    rating = (TextView)findViewById(R.id.rating);
-    firstname = (TextView)findViewById(R.id.first_name);
 
     //SET
 
@@ -54,12 +61,52 @@ public class ProductDetail extends AppCompatActivity {
     categoryname.setText(Home.categoryname.get(pos));
     String img=Home.itemurl.get(pos);
     String imgurl="http://"+sh.getString("ip","")+":8084/ARFurnitureWeb/Items/"+img;
-    Picasso.with(Context).load(imgurl).into(itemurl);
+    Picasso.with(getApplicationContext()).load(imgurl).into(itemurl);
 
-    postdate.setText(Home.postdate.get(pos));
-    review.setText(Home.review.get(pos));
-    rating.setText(Home.rating.get(pos));
-    firstname.setText(Home.firstname.get(pos));
 
+
+    id = Home.itemid.get(pos);
+
+    try{
+        JSONObject json=new JSONObject();
+        JSONParser jsonParser = new JSONParser();
+        ArrayList<NameValuePair> para=new ArrayList<>();
+        para.add(new BasicNameValuePair("id",Home.itemid.get(pos)));
+        sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        url = sp.getString("url", "") + "ProductDetail";
+        json=jsonParser.makeHttpRequest(url,"GET",para);
+
+
+        String status=json.getString("status");
+       Toast.makeText(getApplicationContext(), para+"", Toast.LENGTH_SHORT).show();
+
+        if(status.equalsIgnoreCase("1")) {
+            JSONArray ja = json.getJSONArray("data");
+            firstname = new ArrayList<>();
+            postdate = new ArrayList<>();
+            review = new ArrayList<>();
+            rating = new ArrayList<>();
+
+            for (int i = 0; i < ja.length(); i++) {
+                JSONObject jo = ja.getJSONObject(i);
+                firstname.add(jo.getString("firstname"));
+                postdate.add(jo.getString("postdate"));
+                review.add(jo.getString("review"));
+                rating.add(jo.getString("rating"));
+            }
+            ArrayAdapter<String> ad=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,firstname);
+            l1.setAdapter(ad);
+        }
+        }   catch (Exception e)
+        {
+            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+        }
   }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(ProductDetail.this, AddReviewRating.class);
+        intent.putExtra("id",id);
+        startActivity(intent);
+    }
 }

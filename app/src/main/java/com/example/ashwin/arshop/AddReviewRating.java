@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
@@ -19,8 +20,10 @@ import java.util.ArrayList;
 public class AddReviewRating extends AppCompatActivity implements View.OnClickListener {
 
     EditText e1;
+    RatingBar r1;
     Button b1;
-    String url="", lid, itemid;
+    String url="", lid;
+    int id;
     SharedPreferences sp;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +31,12 @@ public class AddReviewRating extends AppCompatActivity implements View.OnClickLi
     setContentView(R.layout.activity_add_review_rating);
 
       e1=(EditText)findViewById(R.id.review);
-      b1=(Button)findViewById(R.id.add_review_button);
-
+      b1=(Button)findViewById(R.id.review_button);
+      r1=(RatingBar)findViewById(R.id.ratingBar);
       sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
       url=sp.getString("url","")+"Review";
       lid=sp.getString("lid","");
-      itemid=sp.getString("itemid","1");
+      id = Integer.parseInt(getIntent().getStringExtra("id"));
 
       b1.setOnClickListener(this);
   }
@@ -42,13 +45,15 @@ public class AddReviewRating extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         if(v==b1)
         {
-            String review=e1.getText().toString();
+            String review = e1.getText().toString();
+            float rating = r1.getRating();
             JSONObject json=new JSONObject();
             JSONParser jsonParser=new JSONParser();
             ArrayList<NameValuePair> para=new ArrayList<>();
             para.add(new BasicNameValuePair("lid",lid));
-            para.add(new BasicNameValuePair("itemid",itemid));
-            para.add(new BasicNameValuePair("review",review));
+            para.add(new BasicNameValuePair("id",id+""));
+            para.add(new BasicNameValuePair("review",review+""));
+            para.add(new BasicNameValuePair("rating", rating+""));
             json=jsonParser.makeHttpRequest(url,"GET",para);
 
             try {

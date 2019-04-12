@@ -61,7 +61,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
                     String status = json.getString("status");
                     if(status.equalsIgnoreCase("1"))
                     {
-                        Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
                         String lid=json.getString("lid");
                         SharedPreferences.Editor ed=sp.edit();
                         ed.putString("lid",lid);
@@ -72,7 +72,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
                     }
                     else
                     {
-                        Toast.makeText(this, "Invalid", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Invalid User ID", Toast.LENGTH_SHORT).show();
                     }
                 }catch(Exception e) {
                     Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();

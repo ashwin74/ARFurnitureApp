@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class EditUserAccount extends AppCompatActivity implements View.OnClickListener {
     EditText e1,e2,e3,e4,e5,e6,e7;
-    Button b1, b2;
+    Button b1, b2, b3;
     String url="",lid,url1="";
     SharedPreferences sp;
     @Override
@@ -35,6 +35,7 @@ public class EditUserAccount extends AppCompatActivity implements View.OnClickLi
         e7=(EditText)findViewById(R.id.zip);
         b1=(Button)findViewById(R.id.edit);
         b2=(Button)findViewById(R.id.save);
+        b3=(Button)findViewById(R.id.back);
 
         sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         url=sp.getString("url","")+"EditUserAccount";
@@ -74,6 +75,7 @@ public class EditUserAccount extends AppCompatActivity implements View.OnClickLi
         }
         b1.setOnClickListener(this);
         b2.setOnClickListener(this);
+        b3.setOnClickListener(this);
     }
 
     @Override
@@ -127,6 +129,12 @@ public class EditUserAccount extends AppCompatActivity implements View.OnClickLi
             e5.setEnabled(true);
             e6.setEnabled(true);
             e7.setEnabled(true);
+        }
+
+        if (v==b3)
+        {
+            Intent intent = new Intent(getApplicationContext(), Home.class);
+            startActivity(intent);
         }
     }
 }

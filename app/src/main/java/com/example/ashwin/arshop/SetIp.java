@@ -43,6 +43,7 @@ public class SetIp extends AppCompatActivity implements View.OnClickListener {
             ed.putString("ip",ip);
             ed.putString("url",url);
             ed.commit();
+            Toast.makeText(this, "IP Address Set to Local Host", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), SignIn.class);
             startActivity(intent);
 
