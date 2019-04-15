@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Shopping Cart"
+        android:text="eCart"
         android:textColor="#fff"
         android:textAlignment="center"
         android:background="#4B0082"

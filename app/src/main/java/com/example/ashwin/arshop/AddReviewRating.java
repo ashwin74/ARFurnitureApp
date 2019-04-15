@@ -34,7 +34,7 @@ public class AddReviewRating extends AppCompatActivity implements View.OnClickLi
       b1=(Button)findViewById(R.id.review_button);
       r1=(RatingBar)findViewById(R.id.ratingBar);
       sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-      url=sp.getString("url","")+"Review";
+      url=sp.getString("url","")+"AddReview";
       lid=sp.getString("lid","");
       id = Integer.parseInt(getIntent().getStringExtra("id"));
 
@@ -61,7 +61,7 @@ public class AddReviewRating extends AppCompatActivity implements View.OnClickLi
                 if(status.equalsIgnoreCase("1"))
                 {
                     Toast.makeText(this, "Review Added", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), ProductDetail.class);
+                    Intent intent = new Intent(getApplicationContext(), ViewReviewRating.class);
                     startActivity(intent);
                 }
                 else

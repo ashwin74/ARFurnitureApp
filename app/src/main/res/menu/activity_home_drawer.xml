@@ -5,9 +5,6 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/cart"
-            android:title="My Cart" />
-        <item
             android:id="@+id/order_status"
             android:title="Order Status" />
         <item

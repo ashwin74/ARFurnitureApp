@@ -14,8 +14,7 @@
         <activity android:name=".OrderStatus" />
         <activity
             android:name=".AddReviewRating"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity
             android:name=".Order"
             android:windowSoftInputMode="stateHidden" />
@@ -27,7 +26,7 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ProductDetail"
-            android:windowSoftInputMode="stateHidden" ></activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".SignUp"
             android:windowSoftInputMode="stateHidden" />
@@ -48,6 +47,7 @@
             android:name=".Home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme" />
+        <activity android:name=".ViewReviewRating"></activity>
     </application>
 
 </manifest>

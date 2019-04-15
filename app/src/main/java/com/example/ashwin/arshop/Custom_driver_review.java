@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class Custom_driver extends BaseAdapter{
+public class Custom_driver_review extends BaseAdapter{
 
     private Context Context;
     ArrayList<String> a;
@@ -28,10 +28,7 @@ public class Custom_driver extends BaseAdapter{
     static int pos;
 
 
-
-
-
-    public Custom_driver(Context applicationContext, ArrayList<String> a, ArrayList<String> b, ArrayList<String> c, ArrayList<String> d) {
+    public Custom_driver_review(Context applicationContext, ArrayList<String> a, ArrayList<String> b, ArrayList<String> c, ArrayList<String> d) {
 
         this.Context=applicationContext;
         this.a=a;
@@ -70,7 +67,7 @@ public class Custom_driver extends BaseAdapter{
         if(convertview==null)
         {
             gridView=new View(Context);
-            gridView=inflator.inflate(R.layout.item, null);
+            gridView=inflator.inflate(R.layout.item_review, null);
 
         }
         else
@@ -79,47 +76,25 @@ public class Custom_driver extends BaseAdapter{
 
         }
 
-        TextView item_name=(TextView)gridView.findViewById(R.id.item_name);
-        TextView item_price=(TextView)gridView.findViewById(R.id.item_price);
-        ImageView item_image=(ImageView)gridView.findViewById(R.id.item_image);
-        final Button add_cart = (Button)gridView.findViewById(R.id.add_cart);
+        TextView firstname=(TextView)gridView.findViewById(R.id.first_name);
+        TextView postdate=(TextView)gridView.findViewById(R.id.post_date);
+        TextView review=(TextView)gridView.findViewById(R.id.review);
+        TextView rating=(TextView)gridView.findViewById(R.id.rating);
         SharedPreferences sh= PreferenceManager.getDefaultSharedPreferences(Context);
 
 
 
-        item_name.setTextColor(Color.BLACK);
-        item_price.setTextColor(Color.BLACK);
+        firstname.setTextColor(Color.BLACK);
+        postdate.setTextColor(Color.BLACK);
+        review.setTextColor(Color.BLACK);
+        rating.setTextColor(Color.BLACK);
 
 
 
-        item_name.setText(a.get(position));
-        item_price.setText(b.get(position));
-
-        try
-        {
-            String imgurl="http://"+sh.getString("ip","")+":8084/ARFurnitureWeb/Items/"+c.get(position);
-            Picasso.with(Context).load(imgurl).into(item_image);
-        }
-        catch (Exception e)
-        {
-            Toast.makeText(Context, e.toString(), Toast.LENGTH_SHORT).show();
-
-        }
-
-        add_cart.setTag(position);
-
-
-        add_cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String pid=add_cart.getTag().toString();
-
-                Intent in=new Intent(Context,ProductDetail.class);
-                in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                in.putExtra("pid",pid);
-                Context.startActivity(in);
-            }
-        });
+        firstname.setText(a.get(position));
+        postdate.setText(b.get(position));
+        review.setText(c.get(position));
+        rating.setText(d.get(position));
 
         return gridView;
     }

@@ -88,10 +88,6 @@ public class Home extends AppCompatActivity
         if (id == R.id.order_status) {
             Intent intent = new Intent(Home.this, OrderStatus.class);
             startActivity(intent);
-
-        }   else if (id == R.id.cart) {
-            Intent intent = new Intent(Home.this, Cart.class);
-            startActivity(intent);
         }   else if (id == R.id.notification) {
             Intent intent = new Intent(Home.this, Notification.class);
             startActivity(intent);

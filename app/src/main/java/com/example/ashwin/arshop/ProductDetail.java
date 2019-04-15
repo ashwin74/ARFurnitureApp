@@ -6,10 +6,8 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,14 +24,12 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
 
   TextView itemname, itemprice, itemdescription, categoryname;
   ImageView itemurl;
-  ListView l1;
-  Button b1;
+  Button b1, b2;
   SharedPreferences sh;
   int pos;
-  String id;
+  String id, lid;
   SharedPreferences sp;
   String url;
-  ArrayList<String> firstname,postdate,review,rating;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +38,9 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
     pos = Integer.parseInt(getIntent().getStringExtra("pid"));
     sh=PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
     b1=(Button)findViewById(R.id.add_review_button);
-    l1=(ListView)findViewById(R.id.review_rate);
+    b2=(Button)findViewById(R.id.buy_item);
     b1.setOnClickListener(this);
+    b2.setOnClickListener(this);
 
     //GET ID
     itemname = (TextView)findViewById(R.id.item_name);
@@ -66,47 +63,21 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
 
 
     id = Home.itemid.get(pos);
-
-    try{
-        JSONObject json=new JSONObject();
-        JSONParser jsonParser = new JSONParser();
-        ArrayList<NameValuePair> para=new ArrayList<>();
-        para.add(new BasicNameValuePair("id",Home.itemid.get(pos)));
-        sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        url = sp.getString("url", "") + "ProductDetail";
-        json=jsonParser.makeHttpRequest(url,"GET",para);
-
-
-        String status=json.getString("status");
-       Toast.makeText(getApplicationContext(), para+"", Toast.LENGTH_SHORT).show();
-
-        if(status.equalsIgnoreCase("1")) {
-            JSONArray ja = json.getJSONArray("data");
-            firstname = new ArrayList<>();
-            postdate = new ArrayList<>();
-            review = new ArrayList<>();
-            rating = new ArrayList<>();
-
-            for (int i = 0; i < ja.length(); i++) {
-                JSONObject jo = ja.getJSONObject(i);
-                firstname.add(jo.getString("firstname"));
-                postdate.add(jo.getString("postdate"));
-                review.add(jo.getString("review"));
-                rating.add(jo.getString("rating"));
-            }
-            ArrayAdapter<String> ad=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,firstname);
-            l1.setAdapter(ad);
-        }
-        }   catch (Exception e)
-        {
-            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
-        }
   }
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(ProductDetail.this, AddReviewRating.class);
-        intent.putExtra("id",id);
-        startActivity(intent);
+        if (v==b1) {
+          Intent intent = new Intent(ProductDetail.this, ViewReviewRating.class);
+          intent.putExtra("id",id);
+          intent.putExtra("lid",lid);
+          startActivity(intent);
+        }
+        if (v==b2) {
+          Intent intent = new Intent(ProductDetail.this, Cart.class);
+          intent.putExtra("id",id);
+          intent.putExtra("lid", lid);
+          startActivity(intent);
+        }
     }
 }
