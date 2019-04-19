@@ -75,8 +75,6 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
         }
         if (v==b2) {
           Intent intent = new Intent(ProductDetail.this, Cart.class);
-          intent.putExtra("id",id);
-          intent.putExtra("lid", lid);
           startActivity(intent);
         }
     }

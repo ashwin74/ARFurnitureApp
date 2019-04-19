@@ -30,6 +30,8 @@ public class Order extends AppCompatActivity implements View.OnClickListener {
         }
         if (v==b2) {
             Toast.makeText(this, "Payment Successful", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Order.this, OrderStatus.class);
+            startActivity(intent);
         }
     }
 }
