@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static ArrayList<String> itemid, itemname, itemprice, itemdescription, itemurl, categoryid, categoryname;
+    public static ArrayList<String> itemid, itemname, itemprice, itemdescription, itemurl, categoryid, categoryname,itemPos;
     ListView item;
     String url;
     SharedPreferences sp;
@@ -59,7 +59,10 @@ public class Home extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
         }
     }
 
@@ -122,6 +125,7 @@ public class Home extends AppCompatActivity
 
                 categoryid=new ArrayList<>();
                 categoryname=new ArrayList<>();
+                itemPos=new ArrayList<>();
 
                 for(int i=0;i<ja.length();i++){
                     JSONObject jo=ja.getJSONObject(i);
@@ -133,10 +137,11 @@ public class Home extends AppCompatActivity
 
                     categoryid.add(jo.getString("categoryid"));
                     categoryname.add(jo.getString("categoryname"));
+                    itemPos.add(i+"");
 
 
                 }
-                    item.setAdapter(new Custom_driver(getApplicationContext(),itemname,itemprice,itemurl,itemid));
+                    item.setAdapter(new Custom_driver(getApplicationContext(),itemname,itemprice,itemurl,itemid,itemPos));
             } else {
                 Toast.makeText(this, "No Products Found", Toast.LENGTH_SHORT).show();
             }
@@ -144,5 +149,7 @@ public class Home extends AppCompatActivity
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }
 

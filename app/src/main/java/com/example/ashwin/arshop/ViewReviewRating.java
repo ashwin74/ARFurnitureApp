@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class ViewReviewRating extends AppCompatActivity implements View.OnClickListener {
 
-    Button b1;
+    Button b1, b2;
     ListView l1;
     int pos;
     String id;
@@ -32,7 +32,7 @@ public class ViewReviewRating extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_review_rating);
 
-        pos = Integer.parseInt(getIntent().getStringExtra("id"));
+        pos = Integer.parseInt(getIntent().getStringExtra("pos"));
         l1=(ListView)findViewById(R.id.review_rate);
         b1=(Button)findViewById(R.id.add_review_button);
         b1.setOnClickListener(this);
@@ -78,7 +78,15 @@ public class ViewReviewRating extends AppCompatActivity implements View.OnClickL
         if(v==b1){
             Intent intent = new Intent(ViewReviewRating.this, AddReviewRating.class);
             intent.putExtra("id",id);
+            intent.putExtra("pos",pos+"");
             startActivity(intent);
         }
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ViewReviewRating.this, ProductDetail.class);
+        intent.putExtra("pid",pos+"");
+        intent.putExtra("id",id);
+        startActivity(intent);
     }
 }

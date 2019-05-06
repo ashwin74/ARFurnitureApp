@@ -19,9 +19,6 @@
             android:name=".Order"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Cart"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
             android:name=".EditUserAccount"
             android:windowSoftInputMode="stateHidden" />
         <activity

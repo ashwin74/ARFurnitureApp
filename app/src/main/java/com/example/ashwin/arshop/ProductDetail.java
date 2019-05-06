@@ -24,7 +24,7 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
 
   TextView itemname, itemprice, itemdescription, categoryname;
   ImageView itemurl;
-  Button b1, b2;
+  Button b1, b2, b3;
   SharedPreferences sh;
   int pos;
   String id, lid;
@@ -39,8 +39,10 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
     sh=PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
     b1=(Button)findViewById(R.id.add_review_button);
     b2=(Button)findViewById(R.id.buy_item);
+    b3=(Button)findViewById(R.id.ar);
     b1.setOnClickListener(this);
     b2.setOnClickListener(this);
+    b3.setOnClickListener(this);
 
     //GET ID
     itemname = (TextView)findViewById(R.id.item_name);
@@ -70,12 +72,25 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
         if (v==b1) {
           Intent intent = new Intent(ProductDetail.this, ViewReviewRating.class);
           intent.putExtra("id",id);
+          intent.putExtra("pos",pos+"");
           intent.putExtra("lid",lid);
           startActivity(intent);
         }
         if (v==b2) {
-          Intent intent = new Intent(ProductDetail.this, Cart.class);
+          Intent intent = new Intent(ProductDetail.this, Order.class);
+          intent.putExtra("pos",pos+"");
           startActivity(intent);
         }
+        if (v==b3) {
+          Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.adarsh.furniture");
+          if (launchIntent != null) {
+            startActivity(launchIntent);//null pointer check in case package name was not found
+          }
+        }
+    }
+    @Override
+    public void onBackPressed() {
+      Intent a = new Intent(ProductDetail.this, Home.class);
+      startActivity(a);
     }
 }

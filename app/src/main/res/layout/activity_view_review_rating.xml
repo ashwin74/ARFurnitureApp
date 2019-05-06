@@ -7,6 +7,16 @@
     android:orientation="vertical"
     tools:context=".ViewReviewRating">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reviews"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:background="#4B0082"
+        android:padding="10dp"
+        android:textSize="20sp"/>
+
     <Button
         android:id="@+id/add_review_button"
         android:layout_width="match_parent"

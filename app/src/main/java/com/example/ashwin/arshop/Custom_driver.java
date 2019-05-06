@@ -25,19 +25,21 @@ public class Custom_driver extends BaseAdapter{
     ArrayList<String> b;
     ArrayList<String> c;
     ArrayList<String> d;
+    ArrayList<String> e;
     static int pos;
 
 
 
 
 
-    public Custom_driver(Context applicationContext, ArrayList<String> a, ArrayList<String> b, ArrayList<String> c, ArrayList<String> d) {
+    public Custom_driver(Context applicationContext, ArrayList<String> a, ArrayList<String> b, ArrayList<String> c, ArrayList<String> d, ArrayList<String> e) {
 
         this.Context=applicationContext;
         this.a=a;
         this.b=b;
         this.c=c;
         this.d=d;
+        this.e=e;
 
 
     }
@@ -106,14 +108,14 @@ public class Custom_driver extends BaseAdapter{
 
         }
 
-        add_cart.setTag(position);
-
+        add_cart.setTag(e.get(position));
 
         add_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String pid=add_cart.getTag().toString();
 
+               // Toast.makeText(Context, pid+"----------", Toast.LENGTH_SHORT).show();
                 Intent in=new Intent(Context,ProductDetail.class);
                 in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 in.putExtra("pid",pid);

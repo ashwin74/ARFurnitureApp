@@ -22,7 +22,7 @@ public class AddReviewRating extends AppCompatActivity implements View.OnClickLi
     EditText e1;
     RatingBar r1;
     Button b1;
-    String url="", lid;
+    String url="", lid,pos;
     int id;
     SharedPreferences sp;
   @Override
@@ -37,6 +37,7 @@ public class AddReviewRating extends AppCompatActivity implements View.OnClickLi
       url=sp.getString("url","")+"AddReview";
       lid=sp.getString("lid","");
       id = Integer.parseInt(getIntent().getStringExtra("id"));
+      pos = getIntent().getStringExtra("pos");
 
       b1.setOnClickListener(this);
   }
@@ -54,14 +55,15 @@ public class AddReviewRating extends AppCompatActivity implements View.OnClickLi
             para.add(new BasicNameValuePair("id",id+""));
             para.add(new BasicNameValuePair("review",review+""));
             para.add(new BasicNameValuePair("rating", rating+""));
-            json=jsonParser.makeHttpRequest(url,"GET",para);
+            json=jsonParser.makeHttpRequest(url,"POST",para);
 
             try {
                 String status = json.getString("status");
                 if(status.equalsIgnoreCase("1"))
                 {
                     Toast.makeText(this, "Review Added", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), ViewReviewRating.class);
+                    Intent intent = new Intent(AddReviewRating.this, ViewReviewRating.class);
+                    intent.putExtra("pos",pos);
                     startActivity(intent);
                 }
                 else
@@ -72,5 +74,12 @@ public class AddReviewRating extends AppCompatActivity implements View.OnClickLi
                 Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(AddReviewRating.this, ViewReviewRating.class);
+        intent.putExtra("pos",pos);
+        startActivity(intent);
     }
 }
