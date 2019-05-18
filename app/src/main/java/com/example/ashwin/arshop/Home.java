@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
@@ -50,6 +51,15 @@ public class Home extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        NavigationView nv=(NavigationView)findViewById(R.id.nav_view);
+        nv.setNavigationItemSelectedListener(this);
+        View vv=nv.getHeaderView(0);
+
+
+        sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        TextView t=(TextView)vv.findViewById(R.id.textView);
+        t.setText(sp.getString("uname",""));
         productDisplay();
     }
 
@@ -110,7 +120,6 @@ public class Home extends AppCompatActivity
         JSONObject json=new JSONObject();
         JSONParser jsonParser = new JSONParser();
         ArrayList<NameValuePair> para=new ArrayList<>();
-        sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         url = sp.getString("url", "") + "Products";
         json=jsonParser.makeHttpRequest(url,"GET",para);
         try {

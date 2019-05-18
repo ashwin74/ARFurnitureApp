@@ -46,7 +46,6 @@
                     android:id="@+id/first_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ashwin"
                     android:textSize="20sp"
                     android:textColor="#000"
                     android:layout_marginLeft="30dp"
@@ -55,7 +54,6 @@
                     android:id="@+id/house_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="White House"
                     android:textSize="20sp"
                     android:textColor="#000"
                     android:layout_marginLeft="30dp"
@@ -64,7 +62,6 @@
                     android:id="@+id/city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Kannur"
                     android:textSize="20sp"
                     android:textColor="#000"
                     android:layout_marginLeft="30dp"
@@ -73,7 +70,6 @@
                     android:id="@+id/state"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Kerala"
                     android:textSize="20sp"
                     android:textColor="#000"
                     android:layout_marginLeft="30dp"
@@ -82,7 +78,6 @@
                     android:id="@+id/zip"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ZipCode - 737277"
                     android:textSize="20sp"
                     android:textColor="#000"
                     android:layout_marginLeft="30dp"
@@ -111,10 +106,49 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Quantity"
+                    android:textStyle="italic"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <Spinner
+                    android:id="@+id/quantity"
+                    android:layout_width="200dp"
+                    android:textAlignment="center"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
+                    android:background="#dcd7df"
+                    android:padding="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total Price"
+                    android:textStyle="italic"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
                     android:id="@+id/total_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total Price : 74000 /-"
                     android:textStyle="italic"
                     android:textSize="25sp"
                     android:textAlignment="center"
@@ -124,6 +158,12 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginBottom="5dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#3A3636"
+                    android:layout_margin="20dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -136,6 +176,7 @@
                     android:layout_marginBottom="10dp"
                     android:textSize="20sp"
                     android:textColor="#000"/>
+
 
                 <EditText
                     android:id="@+id/card_number"
@@ -162,6 +203,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
                     android:text="pay"
                     android:textColor="#fff"
                     android:background="@color/colorAccent"/>

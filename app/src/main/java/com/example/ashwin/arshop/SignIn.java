@@ -65,6 +65,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
                         String lid=json.getString("lid");
                         SharedPreferences.Editor ed=sp.edit();
                         ed.putString("lid",lid);
+                        ed.putString("uname",uname);
                         ed.commit();
 
                         Intent intent = new Intent(getApplicationContext(), Home.class);

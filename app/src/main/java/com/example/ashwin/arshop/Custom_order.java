@@ -75,13 +75,12 @@ public class Custom_order extends BaseAdapter{
         TextView itemquantity=(TextView)gridView.findViewById(R.id.item_quantity);
         TextView itemprice=(TextView)gridView.findViewById(R.id.item_price);
         TextView orderstatus=(TextView)gridView.findViewById(R.id.order_status);
-        SharedPreferences sh= PreferenceManager.getDefaultSharedPreferences(Context);
 
         itemname.setText(a.get(position));
         itemquantity.setText(b.get(position));
         itemprice.setText(c.get(position));
         orderstatus.setText(d.get(position));
-
+        //Toast.makeText(Context, a.size()+"===", Toast.LENGTH_SHORT).show();
         return gridView;
     }
 
